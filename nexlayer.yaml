@@ -1,0 +1,14 @@
+application:
+  name: dockge
+  pods:
+  - name: app
+    image: louislam/dockge:1
+    path: /
+    servicePorts:
+    - 5001
+    vars:
+      DOCKGE_STACKS_DIR: /opt/stacks
+    volumes:
+    - name: dockge-stacks
+      mountPath: /opt/stacks
+      size: 5Gi
